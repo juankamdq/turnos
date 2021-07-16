@@ -1,0 +1,35 @@
+@model IEnumerable<Turnos.Models.Especialidad>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especialidad</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    * DisplayNameFor muestra el nombre de la propiedad *
+                    @Html.DisplayNameFor(model => model.Descripcion);
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @* Este es un comentario en razor *@
+            @foreach (var item in Model) // Model refiere a la declaracion de arriba @model, por eso no es necesario ponerle Model.Especialidad
+            {
+                <tr>
+                    <td>
+                        @*  DisplayFor muestra contenido del campo  *@
+                        @Html.DisplayFor(modelItem => item.Descripcion);
+                    </td>
+                </tr>
+            } 
+        </tbody>
+    </table>
+</body>
+</html>

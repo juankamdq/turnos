@@ -1,0 +1,19 @@
+using Microsoft.AspNetCore.Mvc;
+using Turnos.Models;
+using System.Linq;
+
+namespace Turnos.Controllers
+{
+    public class EspecialidadController : Controller
+    {
+
+        private readonly TurnosContext _context;
+        public EspecialidadController(TurnosContext context){
+            _context = context;
+        }
+
+        public IActionResult Index(){
+            return View(_context.Especialidad.ToList());
+        }
+    }
+}
